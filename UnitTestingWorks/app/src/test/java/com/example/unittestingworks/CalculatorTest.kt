@@ -10,10 +10,16 @@ import org.junit.Test
  *  Also you have add @Test annotation to your method
  */
 
+/** you have to test only one scenario in a method
+ *  Because if one scenario fails, other scenarios don't
+ *  work. For this reason you have to test your all scenarios in
+ *  different methods
+ */
+
 class CalculatorTest {
 
     @Test
-    fun getSum() {
+    fun testGetSum() {
         /** preparation*/
         val calculator = Calculator()
         val numberOne = 7
@@ -25,6 +31,31 @@ class CalculatorTest {
 
         /** check result */
         Assert.assertEquals(10, sum)
+    }
+
+    @Test
+    fun testGetDifferenceNumberOneGreaterThanNumberTwo() {
+        Assert.assertEquals(5,Calculator().getDifference(10,5))
+    }
+
+    @Test
+    fun testGetDifferenceNumberTwoGreaterThanNumberOne(){
+        Assert.assertEquals(-5,Calculator().getDifference(5,10))
+    }
+
+    @Test
+    fun testGetDifferenceNumberOneEqualsZero(){
+        Assert.assertEquals(-10,Calculator().getDifference(0,10))
+    }
+
+    @Test
+    fun testGetDifferenceNumberTwoEqualsZero(){
+        Assert.assertEquals(10,Calculator().getDifference(10,0))
+    }
+
+    @Test
+    fun testGetDifferenceBothEqualsZero(){
+        Assert.assertEquals(0,Calculator().getDifference(0,0))
     }
 
 }

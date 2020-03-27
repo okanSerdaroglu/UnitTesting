@@ -6,4 +6,8 @@ class Calculator {
         return numberOne + numberTwo
     }
 
+    fun getDifference (numberOne : Int, numberTwo : Int) : Int {
+        return numberOne - numberTwo
+    }
+
 }
