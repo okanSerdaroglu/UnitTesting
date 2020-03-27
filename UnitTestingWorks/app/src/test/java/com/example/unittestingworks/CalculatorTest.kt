@@ -13,23 +13,28 @@ import org.junit.Test
 /** you have to test only one scenario in a method
  *  Because if one scenario fails, other scenarios don't
  *  work. For this reason you have to test your all scenarios in
- *  different methods
+ *  different methods. Method names should
+ */
+
+/** method names can be named different ways
+ *  should_result_when_condition
+ *  when_condition_expect_result
  */
 
 class CalculatorTest {
 
     @Test
     fun testGetSum() {
-        /** preparation*/
+        /** GIVEN */
         val calculator = Calculator()
         val numberOne = 7
         val numberTwo = 3
 
-        /** run your method */
+        /** WHEN */
         val sum = calculator.getSum(numberOne, numberTwo)
         // 7 is the respected result for this operation
 
-        /** check result */
+        /** THEN */
         Assert.assertEquals(10, sum)
     }
 
